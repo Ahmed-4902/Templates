@@ -1,0 +1,16 @@
+@mixin flex-center() {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+@mixin flex($jc, $ai) {
+   display: flex;
+   justify-content: $jc;
+   align-items: $ai;
+}
+@mixin position-center {
+   position: relative;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
