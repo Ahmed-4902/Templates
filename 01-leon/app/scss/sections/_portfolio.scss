@@ -1,0 +1,31 @@
+@use "../utils/functions" as *;
+@use "../utils/colors" as *;
+@use "../utils/mixins" as *;
+
+.portfolio {
+	min-height: calc(100vh - rem(125));
+	display: flex;
+	align-items: center;
+	background-color: #f6f6f6;
+	.portfolio-content {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		margin-top: rem(100);
+		grid-gap: rem(30);
+		.box {
+			background-color: #fff;
+			margin-bottom: rem(50);
+			img {
+				max-width: 100%;
+			}
+			.info {
+				padding: 0 rem(20);
+				p {
+					color: #979797;
+					line-height: 1.6;
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

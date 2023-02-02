@@ -1,0 +1,54 @@
+@use "../utils/functions" as *;
+@use "../utils/colors" as *;
+@use "../utils/mixins" as *;
+@use "../utils/breakpoints" as *;
+
+.services {
+	min-height: calc(100vh - rem(125));
+	display: flex;
+	align-items: center;
+	.services-content {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-gap: rem(30);
+		margin-top: rem(100);
+		.srv {
+			display: flex;
+			margin-bottom: rem(40);
+			@include breakpoint-down(small) {
+				flex-direction: column;
+				text-align: center;
+			}
+			i {
+				color: #10cab7;
+				flex-basis: rem(60);
+			}
+			.text {
+				flex: 1;
+				h3 {
+					margin: 0 0 rem(20);
+				}
+				p {
+					color: #444;
+					line-height: 1.6;
+					font-weight: 300;
+				}
+			}
+		}
+		.image {
+			text-align: center;
+			position: relative;
+			&::before {
+				@include pseudo;
+				background-color: $footer-bg;
+				width: rem(100);
+				height: calc(100% + rem(100));
+				top: -50px;
+				z-index: -1;
+			}
+			img {
+				width: rem(260);
+			}
+		}
+	}
+}

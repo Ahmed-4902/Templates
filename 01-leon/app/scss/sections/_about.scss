@@ -1,0 +1,71 @@
+@use "../utils/functions" as *;
+@use "../utils/colors" as *;
+@use "../utils/mixins" as *;
+
+.about {
+	min-height: calc(100vh - rem(125));
+	display: flex;
+	align-items: center;
+	padding: rem(60) 0 rem(120);
+	.about-content {
+		margin-top: rem(100);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		@include breakpoints(medium) {
+			flex-direction: column;
+			text-align: center;
+		}
+		.image {
+			position: relative;
+			width: rem(250);
+			height: rem(375);
+			@include breakpoints(medium) {
+				margin: 0 auto 60px;
+			}
+			&::before {
+				@include pseudo;
+				background-color: $header-txt;
+				height: calc(100% + rem(80));
+				width: rem(100);
+				top: -40px;
+				left: -20px;
+				z-index: -1;
+			}
+			&::after {
+				@include pseudo;
+				top: -40px;
+				width: rem(120);
+				height: rem(300);
+				border-left: rem(80) solid #10cab7;
+				border-bottom: rem(80) solid #10cab7;
+				z-index: -1;
+				right: -150px;
+			}
+			&::before,
+			&::after {
+				@include breakpoints(medium) {
+					display: none;
+				}
+			}
+			img {
+				max-width: 100%;
+			}
+		}
+		.text {
+			flex-basis: calc(100% - rem(500));
+			line-height: 2;
+			P:first-child {
+				font-weight: 700;
+			}
+			P:last-child {
+				color: #777;
+			}
+			hr {
+				width: 50%;
+				display: inline-block;
+				border-color: #10cab7;
+			}
+		}
+	}
+}

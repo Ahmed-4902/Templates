@@ -1,0 +1,15 @@
+{
+  "name": "01-leon",
+  "version": "1.0.0",
+  "description": "<h2>Website Link</h2>\r https://ahmed-4902.github.io/leon/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.58.0"
+  }
+}

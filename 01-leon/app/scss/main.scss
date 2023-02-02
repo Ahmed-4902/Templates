@@ -1,0 +1,35 @@
+@use "base" as *;
+@use "layout" as *;
+@use "sections" as *;
+@use "utils" as *;
+
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style: none;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: "Work Sans", sans-serif;
+}
+
+.container {
+	padding: rem(0) rem(15);
+	margin: rem(0) auto;
+	@include breakpoint-up(small) {
+		width: rem(750);
+	}
+	@include breakpoint-up(medium) {
+		width: rem(970);
+	}
+	@include breakpoint-up(large) {
+		width: rem(1170);
+	}
+}
