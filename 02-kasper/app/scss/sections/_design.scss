@@ -1,0 +1,66 @@
+@use "../utils/functions" as *;
+@use "../utils/mixins" as *;
+@use "../utils/colors" as *;
+@use "../utils/breakpoints" as *;
+
+.design {
+	padding: em(100) 0;
+	height: em(600);
+	background-image: url(../image/design-features.jpg);
+	background-size: cover;
+	position: relative;
+	@include flex-full($align: center);
+	overflow: hidden;
+	&:before {
+		@include pseudo;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+	}
+	.image,
+	.text {
+		position: relative;
+		z-index: 2;
+		flex: 1;
+	}
+	.image {
+		text-align: center;
+		img {
+			position: relative;
+			bottom: -200px;
+			@include breakpoint-down(small) {
+				display: none;
+			}
+		}
+	}
+	.text {
+		padding: 50px;
+		color: #fff;
+		background-color: rgba(15, 116, 143, 0.7);
+		@include breakpoint-down(small) {
+			flex: 100%;
+			padding: 20px;
+		}
+		h2 {
+			font-weight: normal;
+			margin-bottom: 40px;
+			text-transform: uppercase;
+			position: relative;
+		}
+		ul li {
+			padding: 15px 0;
+			position: relative;
+			&::before {
+				font-family: "font awesome 5 free";
+				content: "\f108";
+				color: #fff;
+				position: relative;
+				font-weight: 900;
+				margin-right: 20px;
+				top: 1px;
+			}
+		}
+	}
+}

@@ -1,6 +1,7 @@
 @use "../utils/functions" as *;
 @use "../utils/colors" as *;
 @use "../utils/mixins" as *;
+@use "../utils/breakpoints" as *;
 
 .about {
 	min-height: calc(100vh - rem(125));
@@ -12,7 +13,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		@include breakpoints(medium) {
+		@include breakpoint-down(medium) {
 			flex-direction: column;
 			text-align: center;
 		}
@@ -20,7 +21,7 @@
 			position: relative;
 			width: rem(250);
 			height: rem(375);
-			@include breakpoints(medium) {
+			@include breakpoint-down(medium) {
 				margin: 0 auto 60px;
 			}
 			&::before {
@@ -44,7 +45,7 @@
 			}
 			&::before,
 			&::after {
-				@include breakpoints(medium) {
+				@include breakpoint-down(medium) {
 					display: none;
 				}
 			}
@@ -55,6 +56,11 @@
 		.text {
 			flex-basis: calc(100% - rem(500));
 			line-height: 2;
+			p {
+				@include breakpoint-down(small) {
+					font-size: rem(12);
+				}
+			}
 			P:first-child {
 				font-weight: 700;
 			}

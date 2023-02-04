@@ -1,0 +1,16 @@
+@use "../utils/functions" as *;
+@use "../utils/colors" as *;
+@use "../utils/mixins" as *;
+@use "../utils/breakpoints" as *;
+
+.about {
+	padding-top: 100px;
+	text-align: center;
+	overflow: hidden;
+	img {
+		position: relative;
+		bottom: -120px;
+		margin-top: -120px;
+		max-width: 100%;
+	}
+}

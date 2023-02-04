@@ -49,6 +49,9 @@
 			img {
 				width: rem(260);
 			}
+			@include breakpoint-down(large) {
+				display: none;
+			}
 		}
 	}
 }

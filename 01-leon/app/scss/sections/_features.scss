@@ -1,26 +1,32 @@
+@use "../utils/breakpoints" as *;
+@use "../utils/functions" as *;
+
 .features {
 	background-color: #f6f6f6;
 	display: flex;
 	align-items: center;
-	min-height: calc(100vh - 125px);
+	min-height: calc(100vh - rem(125));
 	.container {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-		grid-gap: 20px;
+		grid-gap: rem(20);
+		@include breakpoint-down(small) {
+			padding: rem(20) 0;
+		}
 		.feat {
-			padding: 20px;
+			padding: rem(20);
 			text-align: center;
 			i {
 				color: #10cab7;
 			}
 			h3 {
 				font-weight: 800;
-				margin: 30px 0px;
+				margin: rem(30) 0;
 				color: #000;
 			}
 			p {
-				font-size: 17px;
-				line-height: 31px;
+				font-size: rem(17);
+				line-height: rem(31);
 				color: #777;
 			}
 		}

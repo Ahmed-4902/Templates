@@ -1,0 +1,90 @@
+@use "../utils/functions" as *;
+@use "../utils/mixins" as *;
+@use "../utils/colors" as *;
+@use "../utils/breakpoints" as *;
+
+.pricing {
+	padding: 100px 0;
+	.plans {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		gap: 30px;
+		.plan {
+			background-color: #fcfcfc;
+			text-align: center;
+			box-shadow: 8px 9px 20px 0px #ececec;
+			.head {
+				border-top: 1px solid #19c8fa;
+				border-bottom: 1px solid #19c8fa;
+				padding: 40px 20px;
+				h3 {
+					font-weight: normal;
+					margin-bottom: 20px;
+					text-transform: uppercase;
+				}
+				span {
+					font-size: rem(60);
+					font-weight: bold;
+					&::before {
+						content: "$";
+						font-size: 25px;
+						position: relative;
+						bottom: 40px;
+						right: 15px;
+						font-weight: normal;
+					}
+					&::after {
+						content: "/mo";
+						font-size: 20px;
+						position: relative;
+						left: 15px;
+					}
+				}
+			}
+			ul {
+				border-bottom: 1px solid #19c8fa;
+				li {
+					padding: 20px;
+					position: relative;
+					&:not(:last-child)::before {
+						content: "";
+						width: 140px;
+						height: 1px;
+						background-color: #19c8fa;
+						position: absolute;
+						bottom: 0;
+						left: 50%;
+						transform: translateX(-50%);
+					}
+				}
+			}
+			.foot {
+				a {
+					display: block;
+					border: 1px solid #19c8fa;
+					width: fit-content;
+					padding: 20px 20px;
+					margin: 30px auto;
+					transition: 0.3s;
+					&:hover {
+						background-color: #19c8fa;
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+	.contact-text {
+		text-align: center;
+		margin: 50px auto 20px;
+		font-size: 20px;
+	}
+	.contact-link {
+		display: block;
+		width: fit-content;
+		margin: 20px auto;
+		background-color: #19c8fa;
+		color: #fff;
+		padding: 15px 30px;
+	}
+}

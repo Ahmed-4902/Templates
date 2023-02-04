@@ -47,7 +47,7 @@ body main > ul li a .keep {
 	font-size: 0.7rem;
 	display: none;
 }
-body main > ul li:hover a .keep  {
+body main > ul li:hover a .keep {
 	/* transform: scale(1.1); */
 	display: block;
 }
@@ -84,4 +84,20 @@ body main > ul li .info {
 .technologies .techs img {
 	width: 20px;
 	margin-right: 5px;
+}
+.technologies .techs span {
+	position: relative;
+}
+.technologies .techs span::before {
+	content: attr(data-content);
+	position: absolute;
+	bottom: 30px;
+	right: 0px;
+	display: none;
+	color: #0075ff;
+	font-weight: bold;
+	min-width: fit-content;
+}
+.technologies .techs span:hover::before {
+	display: block;
 }

@@ -1,0 +1,118 @@
+@use "../utils/functions" as *;
+@use "../utils/colors" as *;
+@use "../utils/mixins" as *;
+@use "../utils/breakpoints" as *;
+
+.our-skills {
+	padding: 100px 0;
+	.container {
+		@include flex-full(space-between, stretch, wrap);
+		@include breakpoint-down(small) {
+			flex-direction: column;
+		}
+		@include breakpoint-down(medium) {
+			flex-direction: column;
+		}
+		@include breakpoint-up(medium) {
+			flex-direction: row;
+		}
+		> div {
+			flex-basis: 45%;
+			h3 {
+				text-align: center;
+			}
+			> p {
+				text-align: center;
+				color: #777;
+				line-height: 2;
+				margin-bottom: 60px;
+			}
+		}
+		.test {
+			.content {
+				@include flex-full(flex-start, center, nowrap);
+				margin-bottom: 30px;
+				@include breakpoint-down(small) {
+					@include flex-full($align: center, $direction: column)
+				}
+				img {
+					width: 100px;
+					border-radius: 50%;
+					margin-right: 50px;
+					@include breakpoint-down(small) {
+						margin: 0 auto 20px;
+					}
+				}
+				.text {
+					border-bottom: 1px solid #ccc;
+					line-height: 1.8;
+					@include breakpoint-down(small) {
+						text-align: center;
+					}
+					p {
+						text-align: right;
+						color: #777;
+						font-size: rem(14);
+						margin-bottom: 10px;
+					}
+				}
+			}
+			.bullets {
+				@include flex-full(center, stretch, nowrap);
+				margin: 50px 0px;
+				li {
+					margin: 10px;
+					width: 14px;
+					height: 14px;
+					border-radius: 50%;
+					border: 1px solid #aaa;
+					&.act {
+						background-color: #19c8fa;
+						border-color: #19c8fa;
+					}
+				}
+			}
+		}
+		.skills .prog-holder {
+			margin-bottom: 40px;
+			h4 {
+				margin-bottom: 15px;
+				text-transform: uppercase;
+				font-weight: normal;
+			}
+			.prog {
+				background-color: #dedadc;
+				height: 30px;
+				width: "width";
+			}
+			.prog-span {
+				height: 100%;
+				background-color: #19c8fa;
+				display: block;
+				position: relative;
+				visibility: visible;
+				transition: 2s ease;
+				&::after {
+					@include pseudo;
+					border: 8px solid;
+					border-color: #000 transparent transparent;
+					top: -15px;
+					right: -8px;
+					visibility: visible;
+				}
+				div {
+					position: absolute;
+					background-color: black;
+					color: white;
+					top: -40px;
+					right: -18px;
+					padding: 4px 0;
+					width: 40px;
+					text-align: center;
+					border-radius: 4px;
+					visibility: visible;
+				}
+			}
+		}
+	}
+}

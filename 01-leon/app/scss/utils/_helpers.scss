@@ -10,16 +10,18 @@
 	letter-spacing: -3px;
 	margin: 0;
 	@include breakpoint-down(small) {
-		font-size: rem(60);
+		font-size: rem(70);
+		margin-top: 20px;
 	}
 	+ p {
 		margin: -30px 0 0;
-		font-size: 20px;
+		font-size: rem(20);
 		text-align: center;
 		color: #797979;
-	}
-	@include breakpoint-down(small) {
-		margin-top: -20px;
+		@include breakpoint-down(small) {
+			margin-top: -20px;
+			font-size: rem(15);
+		}
 	}
 }
 

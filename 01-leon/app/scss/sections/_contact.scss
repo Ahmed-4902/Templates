@@ -51,7 +51,7 @@ $socials: (
 				cursor: pointer;
 				transition: 0.3s;
 				@each $name, $color in $socials {
-					&.#{$name} {
+					&.#{$name}:hover {
 						color: $color;
 					}
 				}

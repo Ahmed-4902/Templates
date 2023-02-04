@@ -24,12 +24,15 @@ body {
 	padding: rem(0) rem(15);
 	margin: rem(0) auto;
 	@include breakpoint-up(small) {
-		width: rem(750);
+		// width: rem(750);
+		width: 750px;
 	}
 	@include breakpoint-up(medium) {
-		width: rem(970);
+		// width: rem(970);
+		width: 970px;
 	}
 	@include breakpoint-up(large) {
-		width: rem(1170);
+		// width: rem(1170);
+		width: 1170px;
 	}
 }

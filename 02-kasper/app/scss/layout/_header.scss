@@ -1,0 +1,103 @@
+@use "../utils/breakpoints" as *;
+@use "../utils/mixins" as *;
+@use "../utils/functions" as *;
+@use "../utils/colors" as *;
+
+header {
+	position: absolute !important;
+	width: 100%;
+	left: 0;
+	z-index: 3;
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: nowrap;
+		position: relative;
+		min-height: 97px;
+		&::after {
+			content: "";
+			width: calc(100% - 30px);
+			height: 1px;
+			background-color: #a2a2a2;
+			position: absolute;
+			bottom: 0px;
+			right: 15px;
+		}
+		img {
+			height: 40px;
+		}
+		nav {
+			flex-grow: 1;
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			flex-wrap: nowrap;
+			.toggle {
+				color: #fff;
+				font-size: 22px;
+				display: none;
+			}
+			.toggle {
+				@include breakpoint-down(small) {
+					display: block;
+				}
+				&:hover + ul {
+					@include breakpoint-down(small) {
+						display: flex;
+						flex-direction: column;
+						top: 100%;
+						position: absolute;
+						width: 100%;
+						background-color: rgba(0, 0, 0, 0.3);
+						
+					}
+					li a {
+						@include breakpoint-down(small) {
+							padding: 15px 0px 20px 50px;
+						}
+					}
+				}
+			}
+			ul {
+				display: flex;
+				@include breakpoint-down(small) {
+					display: none;
+				}
+
+				li a {
+					color: #fff;
+					display: block;
+					text-decoration: none;
+					font-size: 14px;
+					padding: 40px 10px;
+					position: relative;
+					z-index: 2;
+					@include breakpoint-down(medium) {
+						padding: 40px 10px;
+					}
+					&.active,
+					&:hover {
+						color: #19c8fa;
+						border-bottom: 1px solid #19c8fa;
+					}
+				}
+			}
+			.form {
+				width: 40px;
+				height: 30px;
+				border-left: 2px solid #fff;
+				margin-left: 20px;
+				position: relative;
+				i {
+					color: #fff;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					font-size: 20px;
+					right: 0;
+				}
+			}
+		}
+	}
+}

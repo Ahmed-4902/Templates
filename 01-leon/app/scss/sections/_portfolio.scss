@@ -12,18 +12,19 @@
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		margin-top: rem(100);
 		grid-gap: rem(30);
+		padding-bottom: 30px;
 		.box {
 			background-color: #fff;
-			margin-bottom: rem(50);
+			margin-bottom: rem(10);
 			img {
 				max-width: 100%;
 			}
 			.info {
-				padding: 0 rem(20);
+				padding: rem(20);
 				p {
 					color: #979797;
 					line-height: 1.6;
-					margin-bottom: 0;
+					margin-top: rem(10);
 				}
 			}
 		}

@@ -1,0 +1,34 @@
+@use "../utils" as *;
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	text-transform: capitalize;
+	transition: 0.5s;
+	text-decoration: none;
+	list-style: none;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: "open sans", sans-serif;
+}
+.container {
+	padding-left: rem(15);
+	padding-right: rem(15);
+	margin-left: auto;
+	margin-right: auto;
+	@include breakpoint-up(small) {
+		width: rem(750);
+	}
+	@include breakpoint-up(medium) {
+		width: rem(970);
+	}
+	@include breakpoint-up(large) {
+		width: rem(1170);
+	}
+}

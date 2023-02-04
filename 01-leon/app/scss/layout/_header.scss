@@ -15,7 +15,7 @@
 			width: rem(60);
 		}
 		.line-links {
-			@include breakpoints(small) {
+			@include breakpoint-down(small) {
 				display: none;
 			}
 			ul {
@@ -42,7 +42,7 @@
 		.links {
 			display: none;
 			position: relative;
-			@include breakpoints(small) {
+			@include breakpoint-down(small) {
 				display: block !important;
 			}
 			.icon {

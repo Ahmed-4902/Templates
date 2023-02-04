@@ -1,0 +1,117 @@
+@use "../utils/functions" as *;
+@use "../utils/colors" as *;
+@use "../utils/mixins" as *;
+@use "../utils/breakpoints" as *;
+
+.stats {
+	background-image: url(../image/stats.png);
+	background-size: cover;
+	position: relative;
+	padding: 100px 0;
+	&::before {
+		@include pseudo;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+	}
+	.container {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		.box {
+			color: #fff;
+			padding: 50px;
+			background-color: rgba(15, 116, 143, 0.7);
+			flex-basis: 25%;
+			@include breakpoint-down(medium) {
+				flex-basis: 50%;
+			}
+			@include breakpoint-down(small) {
+				flex-basis: 100%;
+			}
+			@include breakpoint-up(medium) {
+				&:first-child {
+					border-radius: 20px 0 0 20px;
+				}
+				&:last-child {
+					border-radius: 0 20px 20px 0;
+				}
+			}
+
+			@include breakpoint-down(medium) {
+				&:first-child {
+					border-radius: 20px 0 0 0;
+				}
+				&:nth-child(2) {
+					border-radius: 0 20px 0 0;
+				}
+				&:nth-child(3) {
+					border-radius: 0 0 0 20px;
+				}
+				&:last-child {
+					border-radius: 0 0 20px 0;
+				}
+			}
+
+			@include breakpoint-down(small) {
+				&:first-child {
+					border-radius: 20px 20px 0 0;
+				}
+				&:nth-child(2) {
+					border-radius: 0;
+				}
+				&:nth-child(3) {
+					border-radius: 0;
+				}
+				&:last-child {
+					border-radius: 0 0 20px 20px;
+				}
+			}
+
+			.i {
+				width: 40px;
+				height: 25px;
+				background-color: #000;
+				color: #fff;
+				@include flex-full(center, center);
+				margin: 0 auto 30px;
+				position: relative;
+				z-index: 2;
+				&::before {
+					@include pseudo;
+					top: -10px;
+					width: 0;
+					height: 0;
+					border-bottom: 10px solid #000;
+					border-left: 20px solid transparent;
+					border-right: 20px solid transparent;
+					z-index: -1;
+				}
+				&::after {
+					@include pseudo;
+					bottom: -10px;
+					width: 0;
+					height: 0;
+					border-top: 10px solid #000;
+					border-left: 20px solid transparent;
+					border-right: 20px solid transparent;
+					z-index: -1;
+				}
+			}
+			.number {
+				font : {
+					weight: bold;
+					size: rem(50);
+				}
+				margin: 0 auto 20px;
+				text-align: center;
+			}
+			p {
+				font-size: rem(14);
+				text-align: center;
+			}
+		}
+	}
+}

@@ -1,0 +1,15 @@
+{
+  "name": "02-kasper",
+  "version": "1.0.0",
+  "description": "<h4>Templete Two <h4>\r <h2>Website Link <h2>\r https://ahmed-4902.github.io/kasper/",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "sass": "^1.58.0"
+  }
+}

@@ -1,0 +1,86 @@
+@use "../utils/functions" as *;
+@use "../utils/colors" as *;
+@use "../utils/mixins" as *;
+@use "../utils/breakpoints" as *;
+
+.contact {
+	padding: 100px 0;
+	.container {
+		.content {
+			@include flex-full(space-between, stretch, nowrap);
+			@include breakpoint-down(small) {
+				flex-direction: column;
+			}
+			form {
+				flex-basis: 70%;
+				.main-input {
+					display: block;
+					width: 100%;
+					margin-bottom: 30px;
+					padding: 20px;
+					border: 1px solid #ccc;
+					&:focus {
+						outline: none;
+					}
+				}
+				textarea.main-input {
+					height: 200px;
+				}
+				input[type="submit"] {
+					background-color: #19c8fa;
+					color: #fff;
+					text-transform: uppercase;
+					padding: 20px;
+					display: flex;
+					border: none;
+					margin-left: auto;
+					cursor: pointer;
+					@include breakpoint-down(small) {
+						margin: auto;
+					}
+				}
+			}
+			.info {
+				flex-basis: 25%;
+				@include breakpoint-down(small) {
+					order: -1;
+					@include flex-full(space-around, center, wrap);
+				}
+				.small-cont {
+					@include flex-full(flex-start, flex-start, nowrap, column);
+					@include breakpoint-down(small) {
+						text-align: center;
+						margin-bottom: 10px;
+					}
+					&:first-of-type {
+						margin-bottom: 70px;
+					}
+					h4 {
+						text-transform: uppercase;
+						margin-bottom: 30px;
+						margin-top: 0px;
+						font-weight: 500;
+						font-size: rem(18);
+						@include breakpoint-down(small) {
+							margin-bottom: 10px;
+						}
+					}
+					&:last-of-type h4 {
+						@include breakpoint-down(small) {
+							margin-left: 10px;
+						}
+					}
+					.phone {
+						color: #777;
+						display: block;
+						margin-bottom: 10px;
+					}
+					address {
+						color: #777;
+						line-height: 2;
+					}
+				}
+			}
+		}
+	}
+}

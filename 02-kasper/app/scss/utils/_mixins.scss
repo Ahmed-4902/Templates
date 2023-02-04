@@ -1,0 +1,120 @@
+@mixin triangle($direction: "top", $color: #f00) {
+	&::before {
+		content: "";
+		position: absolute;
+		border: 20px solid transparent;
+		@if $direction == "top" {
+			top: -40px;
+			left: 50%;
+			transform: translateX(-50%);
+			border-bottom-color: $color;
+		} @else if $direction == "right" {
+			right: -40px;
+			top: 50%;
+			transform: translateY(-50%);
+			border-left-color: $color;
+		} @else if $direction == "bottom" {
+			bottom: -40px;
+			left: 50%;
+			transform: translateX(-50%);
+			border-top-color: $color;
+		} @else if $direction == "left" {
+			left: -40px;
+			top: 50%;
+			transform: translateY(-50%);
+			border-right-color: $color;
+		} @else {
+			@error "This Direction #{$direction} is Not valied";
+		}
+	}
+}
+
+@mixin screens($screen) {
+	@if $screen == mobile {
+		@media (max-width: 767px) {
+			@content;
+		}
+	} @else if $screen == small {
+		@media (min-width: 768px) and (max-width: 991px) {
+			@content;
+		}
+	} @else if $screen == medium {
+		@media (min-width: 992px) and (max-width: 1199px) {
+			@content;
+		}
+	} @else if $screen == large {
+		@media (min-width: 1200px) {
+			@content;
+		}
+	}
+}
+
+@mixin css3-prefix($prop, $value) {
+	-webkit-#{$prop}: #{$value};
+	-moz-#{$prop}: #{$value};
+	-ms-#{$prop}: #{$value};
+	-o-#{$prop}: #{$value};
+	#{$prop}: #{$value};
+}
+
+@mixin vertical-center {
+	position: relative;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+	content: $content;
+	display: $display;
+	position: $pos;
+}
+
+@mixin flex-center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin flex-full(
+	$justify: false,
+	$align: false,
+	$wrap: false,
+	$direction: false,
+	$grow: false
+) {
+	display: flex;
+
+	@if $justify {
+		justify-content: $justify;
+	}
+
+	@if $align {
+		align-items: $align;
+	}
+
+	@if $wrap {
+		flex-wrap: $wrap;
+	}
+
+	@if $direction {
+		flex-direction: $direction;
+	}
+
+	@if $grow {
+		flex-grow: $grow;
+	}
+}

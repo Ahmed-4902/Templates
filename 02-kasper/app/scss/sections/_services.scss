@@ -1,0 +1,44 @@
+@use "../utils/functions" as *;
+@use "../utils/colors" as *;
+@use "../utils/mixins" as *;
+@use "../utils/breakpoints" as *;
+
+.services {
+	padding: em(100) 0;
+	.services-container {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(em(354), 1fr));
+		grid-column-gap: em(40);
+		grid-row-gap: em(60);
+		@include breakpoint-down(medium) {
+			grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		}
+		.srv-box {
+			display: flex;
+			@include breakpoint-down(small) {
+				@include flex-full($align: center, $direction: column);
+			}
+			i {
+				margin-right: rem(20);
+				@include breakpoint-down(small) {
+					margin-bottom: 20px;
+					margin-right: 0;
+				}
+			}
+			h3 {
+				color: #19c8fa;
+				margin-bottom: rem(15);
+				@include breakpoint-down(small) {
+					text-align: center;
+				}
+			}
+			p {
+				line-height: 2;
+				color: #777;
+				@include breakpoint-down(small) {
+					text-align: center;
+				}
+			}
+		}
+	}
+}
