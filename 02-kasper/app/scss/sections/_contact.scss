@@ -25,6 +25,8 @@
 				}
 				textarea.main-input {
 					height: 200px;
+					resize: none;
+					width: 100%;
 				}
 				input[type="submit"] {
 					background-color: #19c8fa;

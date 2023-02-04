@@ -1089,6 +1089,8 @@ header .container nav .form i {
 }
 .contact .container .content form textarea.main-input {
   height: 200px;
+  resize: none;
+  width: 100%;
 }
 .contact .container .content form input[type=submit] {
   background-color: #19c8fa;
